@@ -22,7 +22,7 @@ namespace BlazorApp.Api
 
             try
             {
-                int isValidDocument = await Shared.Helper.VerifyDocument(req.Body, Shared.Helper.DocumentType.WorkOrderSpareParts.ToString());
+                int isValidDocument = await Shared.Helper.VerifyDocument(req.Body, (int)Shared.Helper.DocumentType.WorkOrderSpareParts);
 
                 if (isValidDocument == 0)
                 {

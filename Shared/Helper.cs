@@ -28,7 +28,7 @@ namespace BlazorApp.Shared
             return container;
         }
 
-        public static async Task<int>  VerifyDocument(Stream body, string documenttype)
+        public static async Task<int>  VerifyDocument(Stream body, int documenttype)
         {
             int resp = 0;
             if (body.Length == 0)
@@ -55,7 +55,7 @@ namespace BlazorApp.Shared
                     var parts = line.Split(',');
 
                     //Invalid Document Type
-                    if (parts[0] != documenttype)
+                    if (parts[0] != documenttype.ToString())
                     {
                         return 3;
                     }
